@@ -2,12 +2,12 @@ from pathlib import Path
 
 def get_config():
     return {
-        "batch_size": 8,
+        "batch_size": 16,
         "num_epochs": 8,
-        "lr": 1e-3,
-        "seq_len": 520,
-        "d_model": 256,
-        "datasource": "mt_eng_vietnamese.parquet",
+        "lr": 1e-4,
+        "seq_len": 50,
+        "d_model": 512,
+        "datasource": "filtered_mt_en_vi.parquet",
         "lang_src": "en",
         "lang_tgt": "vi",
         "model_folder": "weights",
