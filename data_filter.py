@@ -1,7 +1,7 @@
 import pyarrow.parquet as pq
 import pyarrow as pa
 
-def filter_sentences(input_file, output_file, max_length=80):
+def filter_sentences(input_file, output_file, max_length=150):
     # Read the Parquet file
     table = pq.read_table(input_file)
     data = table.to_pydict()

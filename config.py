@@ -3,9 +3,9 @@ from pathlib import Path
 def get_config():
     return {
         "batch_size": 16,
-        "num_epochs": 8,
+        "num_epochs": 5,
         "lr": 1e-4,
-        "seq_len": 50,
+        "seq_len": 40,
         "d_model": 512,
         "datasource": "filtered_mt_en_vi.parquet",
         "lang_src": "en",

@@ -144,7 +144,6 @@ def get_ds(config):
     # It only has the train split, so we divide it overselves
     table = pq.read_table(config['datasource'])
     ds_raw = table.to_pydict()['translation']
-    ds_raw = ds_raw[:10000]
 
     # Build tokenizers
     tokenizer_src = get_or_build_tokenizer(config, ds_raw, config['lang_src'])
@@ -214,7 +213,7 @@ def train_model(config):
     if model_filename:
         print(f'Preloading model {model_filename}')
         state = torch.load(model_filename)
-        model.load_state_dict(state['model_state_dict'])
+        model.load_state_dict(state['model_state_dict'], strict=False)
         initial_epoch = state['epoch'] + 1
         optimizer.load_state_dict(state['optimizer_state_dict'])
         global_step = state['global_step']
