@@ -2,10 +2,10 @@ from pathlib import Path
 
 def get_config():
     return {
-        "batch_size": 16,
-        "num_epochs": 1,
+        "batch_size": 32,
+        "num_epochs": 12,
         "lr": 1e-4,
-        "seq_len": 65,
+        "seq_len": 60,
         "d_model": 512,
         "datasource": "filtered_mt_en_vi.parquet",
         "lang_src": "en",
